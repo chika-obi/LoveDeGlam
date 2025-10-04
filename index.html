@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LoveDeGlam — Makeup · Frontal Installation · Hair Revamp</title>
+  <meta name="description" content="LoveDeGlam — All kinds of makeup, frontal installation, and hair revamping. Premium beauty services." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Reset & base ===== */
+    :root{
+      --pink-1: #ff7ab6;
+      --pink-2: #ff4d9e;
+      --rose: #ff2e84;
+      --dark: #0f0f10;
+      --muted: #6b6b6b;
+      --glass: rgba(255,255,255,0.08);
+      --glass-2: rgba(255,255,255,0.12);
+      --max-width: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--dark);background:#fff}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Page layout ===== */
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:32px}
+
+    /* ===== Hero ===== */
+    header.hero{
+      position:relative;
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:1fr 480px;
+      gap:32px;
+      align-items:center;
+      overflow:hidden;
+    }
+    header.hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background-image: url('background.jpg');
+      background-size:cover;background-position:center;filter:brightness(.55) saturate(1.05);
+      z-index:0;
+      transform:scale(1.03);
+    }
+    .hero-inner{position:relative;z-index:2;padding:48px}
+
+    /* Glass card */
+    .card{
+      background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border-radius:18px;padding:22px;backdrop-filter: blur(8px);box-shadow:0 8px 30px rgba(0,0,0,0.25)
+    }
+
+    /* Logo */
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo img{width:72px;height:72px;border-radius:14px;object-fit:cover;border:2px solid rgba(255,255,255,0.18)}
+    .logo h1{font-family:'Playfair Display';font-weight:700;margin:0;font-size:22px;color:#fff;letter-spacing:.6px}
+
+    h2.lead{font-size:36px;margin:18px 0 8px;color:#fff;line-height:1.05}
+    p.lead-desc{color:rgba(255,255,255,0.92);margin:0 0 20px}
+
+    .actions{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;font-weight:600;cursor:pointer;border:none}
+    .btn.primary{background:linear-gradient(90deg,var(--pink-1),var(--pink-2));color:#fff;box-shadow:0 8px 30px rgba(255,77,158,0.18)}
+    .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.18)}
+
+    /* Right hero card (showcase) */
+    .showcase{
+      align-self:center;justify-self:end;position:relative;z-index:2;margin-right:48px
+    }
+    .showcase .card{padding:0;border-radius:22px;overflow:hidden}
+    .showcase .hero-img{height:480px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));display:flex;align-items:end;justify-content:center}
+    .showcase .hero-img img{width:100%;height:100%;object-fit:cover}
+
+    /* SVG decorative */
+    .waves{position:absolute;bottom:0;left:0;right:0;height:220px;z-index:1;opacity:.75}
+
+    /* Services */
+    .one{
+       background:linear-gradient(180deg, rgba(8, 8, 8, 0.02), #ff4d9e);
+       box-shadow: #ff2e84;
+    }
+    
+    section.services{
+      padding:72px 0;
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), #c0bebf);
+    }
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .service{padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,250,253,1), #fff);box-shadow:0 8px 20px rgba(15,15,16,0.04);transition:transform .36s ease, box-shadow .36s}
+    .service:hover{transform:translateY(-10px);box-shadow:0 22px 40px rgba(15,15,16,0.08)}
+    .service h3{margin:0 0 8px;font-size:20px;color:var(--dark)}
+    .service p{margin:0;color:var(--muted)}
+
+    /* Gallery */
+    section.gallery{padding:48px 0}
+    .grid-sq{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .grid-sq img{width:100%;height:220px;object-fit:cover;border-radius:12px}
+
+    /* Testimonials */
+    section.testimonials{padding:48px 0}
+    .test-cards{display:flex;gap:18px;overflow:auto;padding-bottom:6px}
+    .test{min-width:320px;padding:18px;border-radius:12px;background:var(--glass-2);backdrop-filter:blur(6px)}
+
+    /* Contact */
+    section.contact{padding:48px 0}
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
+    .contact-form input,.contact-form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #eee;margin-bottom:12px}
+    .contact-form button{width:100%}
+
+    
+    footer
+    {
+      padding:28px 0;
+      text-align:center;
+      background-color: brown;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), #ff4d9e);
+      display: flex;
+      align-items: center;
+       }
+
+    /* small devices */
+    @media (max-width:980px){
+      header.hero{grid-template-columns:1fr;min-height:86vh;padding-bottom:40px}
+      .showcase{order:-1;margin:0}
+      .grid-sq{grid-template-columns:repeat(2,1fr)}
+      .services-grid{grid-template-columns:repeat(1,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    /* subtle animations */
+    .fade-up{opacity:0;transform:translateY(12px);animation:fadeUp .8s cubic-bezier(.2,.9,.2,1) forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* Canvas particle size */
+    canvas#glitter{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+  </style>
+</head>
+<body>
+
+  <canvas id="glitter"></canvas>
+
+  <header class="hero">
+    <div class="hero-inner wrap">
+      <div class="logo card">
+        <img src="logo.jpg" alt="LoveDeGlam logo">
+        
+        <div>
+          <h1>LoveDeGlam</h1>
+          <div style="font-size:12px;color:rgba(255,255,255,0.9);">Luxury · Confidence · Transformation</div>
+        </div>
+      </div>
+
+      <h2 class="lead fade-up">Glam that tells your story.</h2>
+      <p class="lead-desc fade-up">Professional makeup, premium frontal installation and bespoke hair revamping — handcrafted by experienced stylists. Book a consultation, get a trial, and step out glowing.</p>
+
+      <div class="actions fade-up">
+        <button class="btn primary" id="bookNow">Book a Consultation</button>
+        <button class="btn ghost" id="viewMore">Our Services</button>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div style="color:rgba(255,255,255,0.9);font-size:13px;display:flex;gap:20px;align-items:center">
+        <div>⭐ 4.9 (2.3k reviews)</div>
+        <div>•</div>
+        <div>Professional stylists</div>
+        <div>•</div>
+        <div>Premium products</div>
+      </div>
+
+    </div>
+
+    <div class="showcase wrap">
+      <div class="card fade-up">
+        <div class="showcase-inner">
+          <div class="hero-img">
+            <img src="background.jpg" alt="LoveDeGlam showcase">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- decorative SVG wave -->
+    <svg class="waves" viewBox="0 0 1200 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="var(--pink-1)" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="var(--pink-2)" stop-opacity="0.45" />
+        </linearGradient>
+      </defs>
+      <path d="M0,120 C200,180 400,40 600,80 C800,120 1000,20 1200,80 L1200,200 L0,200 Z" fill="url(#g1)"></path>
+    </svg>
+  </header>
+
+  <main>
+    <section class="services wrap" id="services">
+      <h2 style="margin-top:0;">Our Signature Services</h2>
+      <div class="services-grid">
+        <article class="service fade-up one">
+          <h3>All Kinds — Makeup Artistry</h3>
+          <p>Bridal, editorial, photoshoots, and everyday glam. We use premium, skin-safe brands and tailor looks to your skin tone and style.</p>
+        </article>
+        <article class="service fade-up one">
+          <h3>Frontal Installation</h3>
+          <p>Seamless frontal installs with natural hairlines. Consultation, custom color-matching, and maintenance guidance included.</p>
+        </article>
+        <article class="service fade-up one">
+          <h3>Hair Revamping</h3>
+          <p>Cutting-edge restyles, extensions, color refresh, and healthy hair treatments to bring your vision to life.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery wrap" aria-label="Gallery">
+      <h2>Gallery</h2>
+      <div class="grid-sq">
+        <img src="image1.jpg" alt="gallery1">
+        <img src="image2.jpg" alt="gallery2">
+        <img src="image3.jpg" alt="gallery3">
+        <img src="image4.jpg" alt="gallery4">
+         <img src="image5.jpg" alt="gallery1">
+        <img src="image6.jpg" alt="gallery2">
+        <img src="image7.jpg" alt="gallery3">
+        <img src="image8.jpg" alt="gallery4">
+         <img src="image9.jpg" alt="gallery1">
+        <img src="image10.jpg" alt="gallery2">
+        <img src="image11.jpg" alt="gallery3">
+        <img src="image12.jpg" alt="gallery4">
+      </div>
+    </section>
+
+    <section class="testimonials wrap">
+      <h2>What clients say</h2>
+      <div class="test-cards">
+        <div class="test card fade-up">
+          <strong>Amaka O.</strong>
+          <p style="margin:8px 0 0">"LoveDeGlam made my wedding look effortless. The makeup stayed fresh all day — highly recommended!"</p>
+        </div>
+        <div class="test card fade-up">
+          <strong>Jade N.</strong>
+          <p style="margin:8px 0 0">"The frontal install was flawless. Natural hairline and great aftercare tips."</p>
+        </div>
+        <div class="test card fade-up">
+          <strong>Sarah T.</strong>
+          <p style="margin:8px 0 0">"Hair revamp gave me a new look — love the color and the healthy finish."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact wrap">
+      <h2>Book & Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <p>If you'd like to book an appointment or request a consultation, fill the form and we'll respond within 24 hours.</p>
+          <div style="display:flex;gap:12px;margin-top:12px">
+            <div class="card" style="padding:12px;border-radius:12px">📍 Port Harcourt, Nigeria</div>
+            <div class="card" style="padding:12px;border-radius:12px">📞 +234 809 529 4480</div>
+            <div class="card" style="padding:12px;border-radius:12px">📞 WHATSAPP</div>
+             <div class="card" style="padding:12px;border-radius:12px">📞 INSTAGRAM</div>
+              <div class="card" style="padding:12px;border-radius:12px">📞 FACEBOOK</div>
+          </div>
+        </div>
+
+        <form class="contact-form card" id="contactForm">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="phone" placeholder="Phone (optional)">
+          <textarea id="message" rows="4" placeholder="Tell us about the service you want..."></textarea>
+          <button class="btn primary" type="submit">Send Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+       <div class="logo card">
+       <img src="logo.jpg" alt="LoveDeGlam logo">
+      <small>© <span id="year"></span> LoveDeGlam — All rights reserved. Built with care.</small>
+         <img src="logo.jpg" alt="LoveDeGlam logo">
+       </div>
+    </div>
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth button scroll
+    document.getElementById('viewMore').addEventListener('click', ()=>{
+      document.getElementById('services').scrollIntoView({behavior:'smooth'});
+    });
+
+    // Contact form - simple faux submit
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value || 'Friend';
+      alert(`Thanks, ${name}! We received your request and will contact you soon.`);
+      e.target.reset();
+    });
+
+    // small staggered reveal
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{
+        el.style.animationDelay = (i*100)+'ms';
+      });
+    });
+
+    // ===== Simple glitter particle canvas for "canva" feel =====
+    const canvas = document.getElementById('glitter');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+    function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+
+    function rand(min,max){return Math.random()*(max-min)+min}
+    function make(){
+      for(let i=0;i<80;i++) particles.push({x:rand(0,W), y:rand(0,H), r:rand(0.6,2.6), a:rand(0.1,0.9), vy:rand(0.1,0.6)})
+    }
+    make();
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(let p of particles){
+        ctx.beginPath();
+        ctx.globalAlpha = p.a * 0.9;
+        ctx.fillStyle = 'rgba(255,255,255,1)';
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+        p.y -= p.vy;
+        p.x += Math.sin(p.y*0.01 + p.r);
+        if(p.y < -10){p.y = H + 10; p.x = rand(0,W)}
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // lightweight accessibility: focus outlines for keyboard
+    document.addEventListener('keyup', (e)=>{ if(e.key === 'Tab') document.body.classList.add('kbd'); });
+
+  </script>
+</body>
+</html>
