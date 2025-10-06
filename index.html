@@ -10,6 +10,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== Navigation ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 12px 0;
+  transition: background .3s;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color .3s;
+}
+.nav-links li a:hover {
+  color: var(--pink-1);
+}
+
+/* Add some top padding so hero content isn’t hidden */
+header.hero {
+  padding-top: 80px;
+}
+
     /* ===== Reset & base ===== */
     :root{
       --pink-1: #ff7ab6;
@@ -141,6 +186,21 @@
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="wrap nav-inner">
+    
+      <div class="nav-logo">LoveDeGlam</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
 
   <canvas id="glitter"></canvas>
 
@@ -216,7 +276,7 @@
       </div>
     </section>
 
-    <section class="gallery wrap" aria-label="Gallery">
+    <section class="gallery wrap" aria-label="Gallery" id="gallery">
       <h2>Gallery</h2>
       <div class="grid-sq">
         <img src="image1.jpg" alt="gallery1">
@@ -234,7 +294,7 @@
       </div>
     </section>
 
-    <section class="testimonials wrap">
+    <section class="testimonials wrap" id="testimonials">
       <h2>What clients say</h2>
       <div class="test-cards">
         <div class="test card fade-up">
@@ -252,7 +312,7 @@
       </div>
     </section>
 
-    <section class="contact wrap">
+    <section class="contact wrap" id="contact">
       <h2>Book & Contact</h2>
       <div class="contact-grid">
         <div>
