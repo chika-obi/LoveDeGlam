@@ -1,0 +1,52 @@
+
+/* ===== Floating Social Contact Bar ===== */
+.social-bar {
+  position: fixed;
+  bottom: 100px;
+  left: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Brand Colors */
+.social-icon.email { background: #D44638; }       /* Gmail */
+.social-icon.whatsapp { background: #25D366; }    /* WhatsApp */
+.social-icon.youtube { background: #FF0000; }     /* YouTube */
+.social-icon.facebook { background: #1877F2; }    /* Facebook */
+.social-icon.tiktok { background: #000000; }      /* TikTok */
+.social-icon.instagram { 
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+/* Hover Effects */
+.social-icon:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  .social-bar {
+    flex-direction: row;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 16px;
+  }
+}
