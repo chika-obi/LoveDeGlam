@@ -2,8 +2,8 @@
 /* ===== Floating Social Contact Bar ===== */
 .social-bar {
   position: fixed;
-  bottom: 100px;
-  left: 1100px;
+  bottom: 60px;
+  left: 1150px;
   display: flex;
   flex-direction: column;
   gap: 14px;
