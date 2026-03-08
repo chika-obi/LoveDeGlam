@@ -13,12 +13,11 @@
   <style>
     /* ===== Navigation ===== */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  /* background: rgba(0,0,0,0.45); */
-
+  background: rgba(0,0,0,0.45);
   z-index: 1000;
   padding: 12px 0;
   transition: background 0.3s;
@@ -170,31 +169,38 @@ header.hero {
     }
     
     section.services{
-        /* background: rgba(0,0,0,0.45); */
-      padding:72px 0;
-        background:linear-gradient(180deg, rgba(255,255,255,0.02), #c0bebf);
-    }
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+     background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--pink-2));
+      text-align:center;
+  }
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin: 2rem;}
     .service{padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,250,253,1), #fff);box-shadow:0 8px 20px rgba(15,15,16,0.04);transition:transform .36s ease, box-shadow .36s}
-    .service:hover{transform:translateY(-10px);box-shadow:0 22px 40px rgba(15,15,16,0.08)}
+    .service:hover{transform:translateY(-10px);box-shadow:0 22px 40px rgba(15,15,16,0.08);background: var(--pink-1)}
     .service h3{margin:0 0 8px;font-size:20px;color:var(--dark)}
-    .service p{margin:0;color:var(--muted)}
-
+    .service p:hover{color:white}
+    
     /* Gallery */
-    section.gallery{padding:48px 0}
+    section.gallery{
+    background:linear-gradient(0deg, rgba(153, 51, 107, 0.02), #ff4d9e);
+    top:-2rem;
+    position: relative;
+    padding-top: 0px;
+  
+  }
     .grid-sq{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .grid-sq img{width:100%;height:220px;object-fit:cover;border-radius:12px}
 
     /* Testimonials */
-    section.testimonials{padding:48px 0}
-    .test-cards{display:flex;gap:18px;overflow:auto;padding-bottom:6px}
+    section.testimonials{
+      padding-top:0px;  
+      text-align:center;
+      top:-7rem;
+      position: relative;
+      /* background-color: red; */
+    }
+    .test-cards{display:grid;grid-template-columns:repeat(1,1fr);gap:50px;background: var(--pink-1);}
     .test{min-width:320px;padding:18px;border-radius:12px;background:var(--glass-2);backdrop-filter:blur(6px)}
-
-    /* Contact */
-    section.contact{padding:48px 0}
-    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
-    .contact-form input,.contact-form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #eee;margin-bottom:12px}
-    .contact-form button{width:100%}
+     .test:hover{background: var(--pink-2);}
+    
 /* ===== Scroll to Top Button ===== */
 #scrollTopBtn {
   position: fixed;
@@ -220,10 +226,11 @@ header.hero {
 
     footer
     {
-      padding:28px 0;
+      top:-8rem;
+      position: relative;
       text-align:center;
       background-color: brown;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), #ff4d9e);
+      background:linear-gradient(10deg, rgba(255,255,255,0.02), #ff4d9e);
       display: flex;
       align-items: center;
        }
@@ -264,14 +271,12 @@ header.hero {
       <li><a href="#">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
+       <li><a href="#videos">Videos</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
-
-
-
   <canvas id="glitter"></canvas>
 
   <header class="hero">
@@ -332,48 +337,119 @@ header.hero {
       <h2 style="margin-top:0;">Our Signature Services</h2>
       <div class="services-grid">
         <article class="service fade-up one">
-          <h3>All Kinds — Makeup Artistry</h3>
+          <h3>All Kinds (Makeup Artistry)</h3>
           <p>Bridal, editorial, photoshoots, and everyday glam. We use premium, skin-safe brands and tailor looks to your skin tone and style.</p>
-        </article>
-        <article class="service fade-up one">
-          <h3>Frontal Installation</h3>
+        <h3>Frontal Installation</h3>
           <p>Seamless frontal installs with natural hairlines. Consultation, custom color-matching, and maintenance guidance included.</p>
+       
         </article>
+       
         <article class="service fade-up one">
           <h3>Hair Revamping</h3>
-          <p>Cutting-edge restyles, extensions, color refresh, and healthy hair treatments to bring your vision to life.</p>
+          
+            <ul>
+            <li>Custom wig making</li>
+              <li>Premium revamping</li>
+                <li>premium silk infusion service </li>
+                <li> curl definition</li>
+                <li>Wig styling</li>
+            </ul>
+            <p>
+            Glueless and customization Cutting-edge restyles, extensions, color refresh, and healthy hair treatments to bring your vision to life.</p>
         </article>
          <article class="service fade-up one">
-          <h3>Training</h3>
-          <p>
-          Master the art of cutting-edge restyles, flawless extensions, vibrant color refreshes, 
-          and healthy hair treatments that bring every client’s vision to life. Learn the techniques
-           professionals use to create stunning, confidence-boosting results!.
-          </p>
-        </article>
+          <h3>Training <br>(Hair-Installation)</h3>
+           <ul>
+              <li> Glued & Glueless Frontal Wig Installation</li>
+               <li>Frontal Ponytails & Sew-ins</li>
+               <li> 5x5, 6x6, 7x6 Closures</li>
+               <li> 360 & Double Frontal Wigs</li>
+               <li> Natural & Relaxed Hair Ponytails</li>
+               <li> Braided Frontal Wigs</li>
+               <li> Premium Wig Revamping & Styling All Hair Types</li>
+            </ul>
+          </article>
+          <article class="service fade-up one">
+          <h3>Training <br>(Makeup)</h3>
+           <ul>
+           <li>flawless long wear bridal makeup on different skin types and tones.</li>
+             <li>Different eyeshadow techniques (How to switch from simple to
+             <li>bold eyeshadows)</li>
+            <li> Skin prep on different skin types</li>
+            <li>Different products recommendations & awareness</li>
+           <li>Phone editing (Picture and Video)</li>
+           <li>Light set up</li>
+           <li>Deep Discussions on the business</li>
+            </ul>
+          </article>
       </div>
     </section>
 
-    <section class="gallery wrap" aria-label="Gallery" id="gallery">
-      <h2>Gallery</h2>
-      <div class="grid-sq">
-        <img src="image1.jpg" alt="gallery1">
-        <img src="image2.jpg" alt="gallery2">
-        <img src="image3.jpg" alt="gallery3">
-        <img src="image4.jpg" alt="gallery4">
-         <img src="image5.jpg" alt="gallery1">
-        <img src="image6.jpg" alt="gallery2">
-        <img src="image7.jpg" alt="gallery3">
-        <img src="image8.jpg" alt="gallery4">
-         <img src="image9.jpg" alt="gallery1">
-        <img src="image10.jpg" alt="gallery2">
-        <img src="image11.jpg" alt="gallery3">
-        <img src="image12.jpg" alt="gallery4">
-      
-      </div>
-    </section>
+<section class="gallery wrap" aria-label="Gallery" id="gallery">
+  
+  <h2>Gallery</h2>
 
-    <section class="testimonials wrap" id="testimonials">
+  <div class="slider">
+
+    <button class="slide-btn prev">&#10094;</button>
+
+    <div class="slides">
+
+      <img src="image1.jpg" alt="gallery1">
+      <img src="image2.jpg" alt="gallery2">
+      <img src="image3.jpg" alt="gallery3">
+      <img src="image4.jpg" alt="gallery4">
+      <img src="image5.jpg" alt="gallery5">
+      <img src="image6.jpg" alt="gallery6">
+
+    </div>
+
+    <button class="slide-btn next">&#10095;</button>
+
+  </div>
+</section>
+<section class="video-section" id="videos">
+
+  <div class="wrap">
+
+    <div class="video-header">
+      <h2>See Our Work In Action</h2>
+      <p>Watch some of our recent transformations and beauty sessions.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-card">
+        <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-card">
+        <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-card">
+        <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="testimonials wrap" id="testimonials">
       <h2>What clients say</h2>
       <div class="test-cards">
         <div class="test card fade-up">
@@ -389,32 +465,11 @@ header.hero {
           <p style="margin:8px 0 0">"Hair revamp gave me a new look — love the color and the healthy finish."</p>
         </div>
       </div>
-    </section>
+</section>
 
-    <section class="contact wrap" id="contact">
-      <h2>Book & Contact</h2>
-      <div class="contact-grid">
-        <div>
-          <p>If you'd like to book an appointment or request a consultation, fill the form and we'll respond within 24 hours.</p>
-          <div style="display:flex;gap:12px;margin-top:12px">
-            <div class="card" style="padding:12px;border-radius:12px">📍 Port Harcourt, Nigeria</div>
-            <div class="card" style="padding:12px;border-radius:12px">📞 +234 907 373 3455</div>
-          
-        
-
+<section class="social-bar">       
 <!-- Social Contact Floating Bar -->
-<div class="social-bar">
-       <!-- WhatsApp Chat Button -->
-
-<!-- WhatsApp Chat Button -->
-<!-- <a 
-  href="https://wa.me/2348095294480?text=Hello%20LoveDeGlam!%20I%20would%20like%20to%20book%20a%20session." target="_blank" 
-  id="whatsappBtn" 
-  title="Chat with us on WhatsApp">
-  💬
-</a> -->
-<!-- Social Contact Floating Bar -->
-<div class="social-bar">
+<!-- <div class="social-bar"> -->
   <a href="mailto:lovedeglam@gmail.com" class="social-icon email" title="Email">
     <i class="fa-solid fa-envelope"></i>
   </a>
@@ -439,25 +494,115 @@ header.hero {
     <i class="fa-brands fa-instagram"></i>
   </a>
 </div>
+</section> 
 
 
-</div>
+    <section class="contact" id="contact">
 
+  <div class="wrap">
 
+    <div class="contact-header">
+      <h2>Get In Touch</h2>
+      <p>
+        We'd love to hear from you. Whether you're booking a session,
+        asking questions, or requesting a consultation — send us a message.
+      </p>
+    </div>
 
+    <div class="contact-layout">
 
+      <!-- CONTACT DETAILS -->
+      <div class="contact-info">
+
+        <div class="info-card">
+          <span class="info-icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>No 11 Ebonyi Road,Oroazi,Port Harcourt,Rivers State, Nigeria</p>
           </div>
         </div>
 
-        <form class="contact-form card" id="contactForm">
-          <input type="text" id="name" placeholder="Your name" required>
-          <input type="email" id="email" placeholder="Email" required>
-          <input type="tel" id="phone" placeholder="Phone (optional)">
-          <textarea id="message" rows="4" placeholder="Tell us about the service you want..."></textarea>
-          <button class="btn primary" type="submit">Send Request</button>
-        </form>
+        <div class="info-card">
+          <span class="info-icon">📞</span>
+          <div>
+            <h4>Phone</h4>
+            <p>+234 907 373 3455 <br>+234 916 264 8527 <br> +234 809 529 4480</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <span class="info-icon">✉</span>
+          <div>
+            <h4>Email</h4>
+            <p>lovedeglam@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <span class="info-icon">⏰</span>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Mon – Sat : 9AM – 6PM</p>
+          </div>
+        </div>
+
       </div>
-    </section>
+
+
+      <!-- CONTACT FORM -->
+      <form class="contact-form" id="contactForm">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" required>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Optional">
+          </div>
+
+          <div class="form-group">
+            <label>Service</label>
+            <select>
+              <option>Select a service</option>
+              <option>Makeup Session</option>
+              <option>Bridal Makeup</option>
+              <option>Training</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label>Your Message</label>
+          <textarea rows="11" placeholder="Tell us what you need..."></textarea>
+        </div>
+
+        <button type="submit" class="btn primary">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
   </main>
 
   <footer>
@@ -549,8 +694,16 @@ window.addEventListener('scroll', () => {
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+setInterval(()=>{
+    index++;
+    if(index >= images.length){
+        index = 0;
+    }
+    showSlide();
+},4000);
 
 
   </script>
+  <script src="main.js"></script>
 </body>
 </html>
